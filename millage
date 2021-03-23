@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+
+public class DriveHistory
+{
+ public List<double> Numbers = new List<double>();
+ public void calculate(double mile,double gallon)
+ {
+   double milePerGallon = (mile/gallon);
+   Numbers.Add(milePerGallon);
+
+
+ }
+
+ public void show()
+ {int r=0;
+    foreach (var value in Numbers)
+    {
+      Console.WriteLine("trip no {0} : milePerGallon was {1} \n",r++,value);
+     }
+ }
+
+}
+
+
+
+public  class Dmain
+{
+public static void Main(String[] args)
+    {
+          double gallon,mile;
+          String userInput,userInput1;
+          int ca=1;
+           DriveHistory a = new DriveHistory();
+while(ca==1)
+{
+ Console.Write("Enter mile value: ");
+			userInput = Console.ReadLine();
+         mile = Convert.ToDouble(userInput);
+          Console.Write("Enter gallon value: ");
+			userInput1 = Console.ReadLine();
+         gallon = Convert.ToDouble(userInput1);
+      
+       
+        a.calculate(mile,gallon);
+        a.show();
+
+        Console.Write("want to Enter  more :  1.Yes 2. No\n");
+        ca=Convert.ToInt32(Console.ReadLine());
+        
+
+
+
+}
+         
+       
+    }
+}
